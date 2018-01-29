@@ -11,7 +11,21 @@
     <script type="text/tamplate" id="keyboard-template">
         <div class="keyboard">
             <div class="row">
-                <% en.split('').forEach( item => { %>
+                <% en.split('').slice(0, 12).forEach( item => { %>
+                    <div class="key">
+                        <%- item %>
+                    </div>
+                <% }); %>
+            </div>
+            <div class="row">
+                <% en.split('').slice(12, 23).forEach( item => { %>
+                    <div class="key">
+                        <%- item %>
+                    </div>
+                <% }); %>
+            </div>
+            <div class="row">
+                <% en.split('').slice(23).forEach( item => { %>
                     <div class="key">
                         <%- item %>
                     </div>
@@ -22,6 +36,15 @@
             </div>
         </div>
     </script>
+    
+    <audio class="sonidos" src="//goo.gl/T1rxRG" data-note="do"></audio>
+    <audio class="sonidos" src="//goo.gl/KT8FN3" data-note="re"></audio>
+    <audio class="sonidos" src="//goo.gl/1SfsNS" data-note="mi"></audio>
+    <audio class="sonidos" src="//goo.gl/OsOCXe" data-note="fa"></audio>
+    <audio class="sonidos" src="//goo.gl/vukZmv" data-note="sol"></audio>
+    <audio class="sonidos" src="//goo.gl/Bjd9KT" data-note="la"></audio>
+    <audio class="sonidos" src="//goo.gl/MS9HTp" data-note="si"></audio> 
+
     <script src='https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)'></script>
     <script src="main.js"></script>
 </body>
