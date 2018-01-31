@@ -3,13 +3,10 @@ const LANG = {
 };
 
 const keyboardTemplate = document.querySelector('#keyboard-template').textContent.trim();
-console.log(keyboardTemplate);
 
 const compiledKeyboard = _.template(keyboardTemplate);
-console.log(compiledKeyboard);
 
 const keyboard = compiledKeyboard(LANG);
-console.log(keyboard);
 
 document.body.innerHTML += keyboard;
 
@@ -47,9 +44,7 @@ const buttonPress = (event) => {
             key = event.code.slice(-1).toString().toLowerCase();
     }
     TYPEAREA.textContent += key;
-    console.log(key);
-    // console.log(event);
-    console.log(event.keyCode);
+    
     if (event.keyCode >= 65 && event.keyCode <= 90 || event.keyCode == 219 ||
         event.keyCode == 221 || event.keyCode == 186 || event.keyCode == 222 ||
         event.keyCode == 188 || event.keyCode == 190 || event.keyCode == 191 ||
@@ -78,7 +73,6 @@ keyboardWindow.before(TYPEAREA);
 
 const typing = (event) => {
     let symbol = event.target.innerText;
-    console.log(symbol);
     if (event.target.classList.contains('key')) {
         TYPEAREA.textContent += symbol;
 
